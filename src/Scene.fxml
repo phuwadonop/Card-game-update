@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import java.util.ArrayList?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1080.0" minHeight="480.0" minWidth="720.0" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sceneController">
+   <children>
+      <Button fx:id="buttom" layoutX="489.0" layoutY="36.0" mnemonicParsing="false" onAction="#setUp" text="click" />
+      
+      <HBox layoutX="179" layoutY="249.0" prefHeight="150.0" prefWidth="280.0" rotate="90.0">
+         <children>
+            <Pane id="0" fx:id="CardOnFieldComOne1" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="CardOnFieldComOne2" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="CardOnFieldComOne3" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="CardOnFieldComOne4" prefHeight="150.0" prefWidth="100.0" />
+
+            <fx:define>
+               <ArrayList fx:id="CardOnFieldComoneList">
+                  <fx:reference source="CardOnFieldComOne1" />
+                  <fx:reference source="CardOnFieldComOne2" />
+                  <fx:reference source="CardOnFieldComOne3" />
+                  <fx:reference source="CardOnFieldComOne4" />
+               </ArrayList>
+            </fx:define>
+
+         </children>
+      </HBox>
+      
+      <HBox layoutX="430.0" layoutY="131.0" prefHeight="150.0" prefWidth="280.0" rotate="180.0">
+         <children>
+            <Pane id="0" fx:id="CardOnFieldComTwo1" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="CardOnFieldComTwo2" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="CardOnFieldComTwo3" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="CardOnFieldComTwo4" prefHeight="150.0" prefWidth="100.0" />
+
+             <fx:define>
+               <ArrayList fx:id="CardOnFieldComtwoList">
+                  <fx:reference source="CardOnFieldComTwo1" />
+                  <fx:reference source="CardOnFieldComTwo2" />
+                  <fx:reference source="CardOnFieldComTwo3" />
+                  <fx:reference source="CardOnFieldComTwo4" />
+               </ArrayList>
+            </fx:define>
+
+
+         </children>
+      </HBox>
+
+       <HBox layoutX="430.0" layoutY="341.0" prefHeight="150.0" prefWidth="280.0">
+         <children>
+            <Pane id="0" fx:id="CardOnFieldPlayer1" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="CardOnFieldPlayer2" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="CardOnFieldPlayer3" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="CardOnFieldPlayer4" prefHeight="150.0" prefWidth="100.0" />
+
+            <fx:define>
+               <ArrayList fx:id="CardOnFieldPlayerList">
+                  <fx:reference source="CardOnFieldPlayer1" />
+                  <fx:reference source="CardOnFieldPlayer2" />
+                  <fx:reference source="CardOnFieldPlayer3" />
+                  <fx:reference source="CardOnFieldPlayer4" />
+               </ArrayList>
+            </fx:define>
+
+         </children>
+      </HBox>
+      
+      <HBox layoutX="679.0" layoutY="249.0" prefHeight="150.0" prefWidth="280.0" rotate="-90.0">
+         <children>
+            <Pane id="0" fx:id="CardOnFieldComthree1" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="CardOnFieldComthree2" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="CardOnFieldComthree3" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="CardOnFieldComthree4" prefHeight="150.0" prefWidth="100.0" />
+
+            <fx:define>
+               <ArrayList fx:id="CardOnFieldComthreeList">
+                  <fx:reference source="CardOnFieldComthree1" />
+                  <fx:reference source="CardOnFieldComthree2" />
+                  <fx:reference source="CardOnFieldComthree3" />
+                  <fx:reference source="CardOnFieldComthree4" />
+               </ArrayList>
+            </fx:define>
+
+         </children>
+      </HBox>
+      
+
+      <HBox alignment="CENTER" layoutX="52.0" layoutY="450.0" prefHeight="150.0" prefWidth="1000.0">
+         <children>
+            <Pane id="0" fx:id="paneViewTop1" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="paneViewTop2" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="paneViewTop3" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="paneViewTop4" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="4" fx:id="paneViewTop5" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="5" fx:id="paneViewTop6" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="6" fx:id="paneViewTop7" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="7" fx:id="paneViewTop8" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="8" fx:id="paneViewTop9" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="9" fx:id="paneViewTop10" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="10" fx:id="paneViewTop11" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="11" fx:id="paneViewTop12" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="12" fx:id="paneViewTop13" onMouseClicked="#clickonCardsTop" prefHeight="150.0" prefWidth="100.0" />
+
+            <fx:define>
+               <ArrayList fx:id="paneTopList">
+                  <fx:reference source="paneViewTop1" />
+                  <fx:reference source="paneViewTop2" />
+                  <fx:reference source="paneViewTop3" />
+                  <fx:reference source="paneViewTop4" />
+                  <fx:reference source="paneViewTop5" />
+                  <fx:reference source="paneViewTop6" />
+                  <fx:reference source="paneViewTop7" />
+                  <fx:reference source="paneViewTop8" />
+                  <fx:reference source="paneViewTop9" />
+                  <fx:reference source="paneViewTop10" />
+                  <fx:reference source="paneViewTop11" />
+                  <fx:reference source="paneViewTop12" />
+                  <fx:reference source="paneViewTop13" />
+               </ArrayList>
+            </fx:define>
+
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="42.0" layoutY="546.0" prefHeight="150.0" prefWidth="1000.0">
+         <children>
+            <Pane id="0" fx:id="paneView1" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="1" fx:id="paneView2" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="2" fx:id="paneView3" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="3" fx:id="paneView4" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="4" fx:id="paneView5" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="5" fx:id="paneView6" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="6" fx:id="paneView7" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="7" fx:id="paneView8" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="8" fx:id="paneView9" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="9" fx:id="paneView10" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="10" fx:id="paneView11" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="11" fx:id="paneView12" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+            <Pane id="12" fx:id="paneView13" onMouseClicked="#clickonCards" prefHeight="150.0" prefWidth="100.0" />
+
+         <fx:define>
+            <ArrayList fx:id="paneList">
+               <fx:reference source="paneView1" />
+               <fx:reference source="paneView2" />
+               <fx:reference source="paneView3" />
+               <fx:reference source="paneView4" />
+               <fx:reference source="paneView5" />
+               <fx:reference source="paneView6" />
+               <fx:reference source="paneView7" />
+               <fx:reference source="paneView8" />
+               <fx:reference source="paneView9" />
+               <fx:reference source="paneView10" />
+               <fx:reference source="paneView11" />
+               <fx:reference source="paneView12" />
+               <fx:reference source="paneView13" />
+            </ArrayList>
+         </fx:define>
+
+         </children>
+      </HBox>
+      <HBox layoutX="96.0" layoutY="17.0" prefHeight="65.0" prefWidth="300">
+         <children>
+            <Pane id="0" fx:id="B1" onMouseClicked="#selectStange" prefHeight="200.0" prefWidth="200.0" />
+            <Pane id="1" fx:id="B2" onMouseClicked="#selectStange" prefHeight="200.0" prefWidth="203.0" />
+            <Pane id="2" fx:id="B3" onMouseClicked="#selectStange" prefHeight="200.0" prefWidth="203.0" />
+            <Pane id="3" fx:id="B4" onMouseClicked="#selectStange" prefHeight="200.0" prefWidth="203.0" />
+
+         <fx:define>
+            <ArrayList fx:id="BList">
+               <fx:reference source="B1" />
+               <fx:reference source="B2" />
+               <fx:reference source="B3" />
+               <fx:reference source="B4" />
+            </ArrayList>
+         </fx:define>
+
+            
+         </children>
+      </HBox>
+     
+   </children>
+</AnchorPane>
