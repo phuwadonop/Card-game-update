@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Card-game-update_839cda75"
+        },
+        {
+            "type": "java",
             "name": "Launch Card",
             "request": "launch",
             "mainClass": "Card",
@@ -17,13 +24,21 @@
             "request": "launch",
             "mainClass": "${file}"
         },
+        // {
+        //     "type": "java",
+        //     "name": "Launch App",
+        //     "request": "launch",
+        //     "mainClass": "App",
+        //     "projectName": "Slave-game_be92cc60",
+        //     "vmArgs": "--module-path E:/Pj-OOP/javafx-sdk-17/lib --add-modules javafx.controls,javafx.fxml"
+        // },
         {
             "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "Slave-game_be92cc60",
-            "vmArgs": "--module-path E:/Pj-OOP/javafx-sdk-17/lib --add-modules javafx.controls,javafx.fxml"
+            //"projectName": "project",
+            "vmArgs": "--module-path D:/Java/javafx-sdk-17/lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
