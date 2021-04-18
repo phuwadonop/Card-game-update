@@ -182,6 +182,7 @@ public class sceneController {
         int value = Integer.parseInt(((Pane)event.getSource()).getId());
         System.out.println("Skip : "+game.getSkip());
         System.out.println("Select : "+game.getSelectCards()+" Limit : "+game.getLimitSelectCards());
+        System.out.println("Player : "+game.getNumPlayerhand()+"||"+" COM1 : "+game.getNumCom1hand()+"||"+" COM2 : "+game.getNumCom2hand()+"||"+" COM3 : "+game.getNumCom3hand());
        if(game.getSelectCards()<game.getLimitSelectCards()&&playerHand.get(value).getStatus()==true) {
             if(game.getSelectStage()==0)
             {
