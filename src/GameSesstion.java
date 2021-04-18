@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class GameSesstion {
     
     private Boolean []statusButton={true,true,true,true};
@@ -10,6 +12,7 @@ public class GameSesstion {
     private int numCom1hand;
     private int numCom2hand;
     private int numCom3hand;
+    private int turn;
     private int []playerSelectIndex={0,0,0,0};
     private int []com1SelectIndex={0,0,0,0};
     private int []com2SelectIndex={0,0,0,0};
@@ -190,6 +193,33 @@ public class GameSesstion {
 
     public void decreasePlayerhand(int numDecrease) {
         this.numPlayerhand -=numDecrease;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public static int findFirsTurn(ArrayList<ComparableCard> playerHand,ArrayList<ComparableCard> Com1Hand,ArrayList<ComparableCard> Com2Hand,ArrayList<ComparableCard> Com3Hand){
+        for(int loop=0;loop<13;loop++){
+            if(playerHand.get(loop).getValue()==3&&playerHand.get(loop).getValueSuit()==1){
+                return 0;
+            }
+            else if(Com1Hand.get(loop).getValue()==3&&Com1Hand.get(loop).getValueSuit()==1){
+                return 1;
+            }
+            else if(Com2Hand.get(loop).getValue()==3&&Com2Hand.get(loop).getValueSuit()==1){
+                return 2;
+            }
+            else if(Com3Hand.get(loop).getValue()==3&&Com3Hand.get(loop).getValueSuit()==1){
+                return 3;
+            }
+            
+        }
+        return 0;
     }
 
     
