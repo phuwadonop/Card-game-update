@@ -426,6 +426,57 @@ public class sceneController {
         System.out.println(CardsOnField);
         fethButton();
         checkLimitCards();
+        
+        if(game.getSkip()==3){
+            for(int loop=0;loop<4;loop++){
+                CardOnFieldPlayerList.get(loop).getChildren().clear();
+                CardOnFieldComoneList.get(loop).getChildren().clear();
+                CardOnFieldComtwoList.get(loop).getChildren().clear();
+                CardOnFieldComthreeList.get(loop).getChildren().clear();
+            }
+            game.setStartStage(true);
+            game.setSkip(0);
+        }
+
+        if(game.getStartStage()==true){
+            System.out.println("new game");
+            
+            game.setStageGame(0);
+            game.setSelectStage(0);
+
+            game.setCom1CanPlay(true);
+            game.setCom2CanPlay(true);
+            game.setCom3CanPlay(true);
+            game.setPlayerCanPlay(true);
+           
+
+            for(int loop=0;loop<4;loop++)
+            {
+                game.setStatusButtontrue(loop);
+            }
+
+            if(!ComparableCard.twoCardsOnHand(playerHand)){
+                BList.get(1).getChildren().clear();
+                BList.get(1).getChildren().add(imageviewButtonOff.get(1));
+                game.setStatusButtonfalse(1);
+            } 
+            if(!ComparableCard.threeCardsOnHand(playerHand)){
+                BList.get(2).getChildren().clear();
+                BList.get(2).getChildren().add(imageviewButtonOff.get(2));
+                game.setStatusButtonfalse(2);
+            }
+            if(!ComparableCard.fourCardsOnHand(playerHand)){
+                BList.get(3).getChildren().clear();
+                BList.get(3).getChildren().add(imageviewButtonOff.get(3));
+                game.setStatusButtonfalse(3);
+            } 
+            CardsOnField.setValue(0);
+            game.setStartStage(false);
+        }
+
+        if(game.getPlayerCanPlay()==false){
+           endTurn();
+        }
 
     }
 
@@ -569,19 +620,19 @@ public class sceneController {
 
     private void bot3Play(){
 
-        if(game.getSkip()==3){
-            for(int loop=0;loop<4;loop++){
-                
-                CardOnFieldPlayerList.get(loop).getChildren().clear();
-                CardOnFieldComoneList.get(loop).getChildren().clear();
-                CardOnFieldComtwoList.get(loop).getChildren().clear();
-                CardOnFieldComthreeList.get(loop).getChildren().clear();
+            if(game.getSkip()==3){
+                for(int loop=0;loop<4;loop++){
+                    
+                    CardOnFieldPlayerList.get(loop).getChildren().clear();
+                    CardOnFieldComoneList.get(loop).getChildren().clear();
+                    CardOnFieldComtwoList.get(loop).getChildren().clear();
+                    CardOnFieldComthreeList.get(loop).getChildren().clear();
+                }
+                game.setStartStage(true);
+                game.setSkip(0);
             }
-            game.setStartStage(true);
-            game.setSkip(0);
-        }
 
-        indexCom3 = Bot.botCalculate(Com3Hand,CardsOnField, game);
+            indexCom3 = Bot.botCalculate(Com3Hand,CardsOnField, game);
             if(indexCom3[4]==4){
                 for(int loop=0;loop<4;loop++){
                     CardOnFieldComthreeList.get(loop).getChildren().clear();
@@ -632,56 +683,6 @@ public class sceneController {
                 game.setStageGame(3);
             }
 
-            if(game.getSkip()==3){
-                for(int loop=0;loop<4;loop++){
-                    CardOnFieldPlayerList.get(loop).getChildren().clear();
-                    CardOnFieldComoneList.get(loop).getChildren().clear();
-                    CardOnFieldComtwoList.get(loop).getChildren().clear();
-                    CardOnFieldComthreeList.get(loop).getChildren().clear();
-                }
-                game.setStartStage(true);
-                game.setSkip(0);
-            }
-
-            if(game.getStartStage()==true){
-                System.out.println("new game");
-                
-                game.setStageGame(0);
-                game.setSelectStage(0);
-
-                game.setCom1CanPlay(true);
-                game.setCom2CanPlay(true);
-                game.setCom3CanPlay(true);
-                game.setPlayerCanPlay(true);
-               
-
-                for(int loop=0;loop<4;loop++)
-                {
-                    game.setStatusButtontrue(loop);
-                }
-
-                if(!ComparableCard.twoCardsOnHand(playerHand)){
-                    BList.get(1).getChildren().clear();
-                    BList.get(1).getChildren().add(imageviewButtonOff.get(1));
-                    game.setStatusButtonfalse(1);
-                } 
-                if(!ComparableCard.threeCardsOnHand(playerHand)){
-                    BList.get(2).getChildren().clear();
-                    BList.get(2).getChildren().add(imageviewButtonOff.get(2));
-                    game.setStatusButtonfalse(2);
-                }
-                if(!ComparableCard.fourCardsOnHand(playerHand)){
-                    BList.get(3).getChildren().clear();
-                    BList.get(3).getChildren().add(imageviewButtonOff.get(3));
-                    game.setStatusButtonfalse(3);
-                } 
-                CardsOnField.setValue(0);
-                game.setStartStage(false);
-            }
-
-            if(game.getPlayerCanPlay()==false){
-               endTurn();
-            }
 
     }
 
