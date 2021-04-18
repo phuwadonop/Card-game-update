@@ -6,25 +6,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
 public class App extends Application{
 
     public static void main(String[] args) throws Exception {
-
-        String text = "test push";
-        String text1 = "test 2";
-
-
-        int madeekapppp;
- 
         launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("Scene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
         stage.setScene(new Scene(root));
-        stage.setTitle("Slave");
+        stage.setTitle("Slave Menu");
         stage.show();
         
     }
