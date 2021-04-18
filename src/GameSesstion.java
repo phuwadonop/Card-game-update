@@ -3,6 +3,12 @@ import java.util.ArrayList;
 public class GameSesstion {
     
     private Boolean []statusButton={true,true,true,true};
+    private Boolean startStage = false;
+    private Boolean playerCanPlay = true;
+    private Boolean Com1CanPlay = true;
+    private Boolean Com2CanPlay = true;
+    private Boolean Com3CanPlay = true;
+
     private int selectStage ;
     private int limitSelectCards ;
     private int selectCards;
@@ -12,7 +18,7 @@ public class GameSesstion {
     private int numCom1hand;
     private int numCom2hand;
     private int numCom3hand;
-    private int turn;
+    private int skip;
     private int []playerSelectIndex={0,0,0,0};
     private int []com1SelectIndex={0,0,0,0};
     private int []com2SelectIndex={0,0,0,0};
@@ -31,6 +37,7 @@ public class GameSesstion {
         this.numCom1hand = 13;
         this.numCom2hand = 13;
         this.numCom3hand = 13;
+        this.skip = 0 ;
     }
 
     public Boolean getStatusButton(int index) {
@@ -195,13 +202,18 @@ public class GameSesstion {
         this.numPlayerhand -=numDecrease;
     }
 
-    public int getTurn() {
-        return turn;
+    public void decreaseCom1hand(int numDecrease) {
+        this.numCom1hand -=numDecrease;
     }
 
-    public void setTurn(int turn) {
-        this.turn = turn;
+    public void decreaseCom2hand(int numDecrease) {
+        this.numCom2hand -=numDecrease;
     }
+
+    public void decreaseCom3hand(int numDecrease) {
+        this.numCom3hand -=numDecrease;
+    }
+
 
     public static int findFirsTurn(ArrayList<ComparableCard> playerHand,ArrayList<ComparableCard> Com1Hand,ArrayList<ComparableCard> Com2Hand,ArrayList<ComparableCard> Com3Hand){
         for(int loop=0;loop<13;loop++){
@@ -221,6 +233,63 @@ public class GameSesstion {
         }
         return 0;
     }
+
+    public Boolean getStartStage() {
+        return startStage;
+    }
+
+    public void setStartStage(Boolean startStage) {
+        this.startStage = startStage;
+    }
+
+    public int getSkip() {
+        return skip;
+    }
+
+    public void setSkip(int skip) {
+        this.skip = skip;
+    }
+
+    public void plusSkip(int num) {
+        this.skip += num;
+    }
+
+    public Boolean getCom1CanPlay() {
+        return Com1CanPlay;
+    }
+
+    public void setCom1CanPlay(Boolean com1CanPlay) {
+        Com1CanPlay = com1CanPlay;
+    }
+
+    public Boolean getCom2CanPlay() {
+        return Com2CanPlay;
+    }
+
+    public void setCom2CanPlay(Boolean com2CanPlay) {
+        Com2CanPlay = com2CanPlay;
+    }
+
+    public Boolean getCom3CanPlay() {
+        return Com3CanPlay;
+    }
+
+    public void setCom3CanPlay(Boolean com3CanPlay) {
+        Com3CanPlay = com3CanPlay;
+    }
+
+    public Boolean getPlayerCanPlay() {
+        return playerCanPlay;
+    }
+
+    public void setPlayerCanPlay(Boolean playerCanPlay) {
+        this.playerCanPlay = playerCanPlay;
+    }
+
+    
+
+    
+    
 
     
     
