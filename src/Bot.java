@@ -6,6 +6,7 @@ public class Bot {
         int[] indexCard={0,0,0,0,4};
             
             if(game.getStartStage()==true){
+                cardOnField.setValue(0);
                 for(int loop=0;loop<13;loop++){
                     if(comHand.get(loop).getStatus()==true){
                         indexCard[0]=loop;
@@ -34,10 +35,13 @@ public class Bot {
                     if(indexCard[4]==4){
                         if(ComparableCard.threeCardsOnHand(comHand)==true){
                             int index = Bot.findIndexThreeCard(comHand);
-                            indexCard[0]=index;
-                            indexCard[1]=index+1;
-                            indexCard[2]=index+2;
-                            indexCard[4]=2;
+                            if(comHand.get(index).getValue()>cardOnField.getValue()){
+                                indexCard[0]=index;
+                                indexCard[1]=index+1;
+                                indexCard[2]=index+2;
+                                indexCard[4]=2;
+                            }
+                            
                            
                         }
                     }
@@ -45,21 +49,25 @@ public class Bot {
                 else if(game.getStageGame()==1){
                     if(ComparableCard.twoCardsOnHand(comHand)==true){
                         int index = Bot.findIndexTwoCard(comHand);
-                        indexCard[0]=index;
-                        indexCard[1]=index+1;
-                        indexCard[4]=1;
+                        if(comHand.get(index).getValue()>cardOnField.getValue()){
+                            indexCard[0]=index;
+                            indexCard[1]=index+1;
+                            indexCard[4]=1;
+                        }
+                        
                         
                     }
 
                     if(indexCard[4]==4){
                         if(ComparableCard.fourCardsOnHand(comHand)==true){
                             int index = Bot.findIndexFourCard(comHand);
-                            indexCard[0]=index;
-                            indexCard[1]=index+1;
-                            indexCard[2]=index+2;
-                            indexCard[3]=index+3;
-                            indexCard[4]=3;
-                            
+                            if(comHand.get(index).getValue()>cardOnField.getValue()){
+                                indexCard[0]=index;
+                                indexCard[1]=index+1;
+                                indexCard[2]=index+2;
+                                indexCard[3]=index+3;
+                                indexCard[4]=3;
+                            }
                         }
                     }
     
@@ -67,22 +75,24 @@ public class Bot {
                 else if(game.getStageGame()==2){
                     if(ComparableCard.threeCardsOnHand(comHand)==true){
                         int index = Bot.findIndexThreeCard(comHand);
-                        indexCard[0]=index;
-                        indexCard[1]=index+1;
-                        indexCard[2]=index+2;
-                        indexCard[4]=2;
-                        
+                        if(comHand.get(index).getValue()>cardOnField.getValue()){
+                            indexCard[0]=index;
+                            indexCard[1]=index+1;
+                            indexCard[2]=index+2;
+                            indexCard[4]=2;
+                        }
                     }
                 }
                 else if(game.getStageGame()==3){
                     if(ComparableCard.fourCardsOnHand(comHand)==true){
                         int index = Bot.findIndexFourCard(comHand);
-                        indexCard[0]=index;
-                        indexCard[1]=index+1;
-                        indexCard[2]=index+2;
-                        indexCard[3]=index+3;
-                        indexCard[4]=3;
-                        
+                        if(comHand.get(index).getValue()>cardOnField.getValue()){
+                            indexCard[0]=index;
+                            indexCard[1]=index+1;
+                            indexCard[2]=index+2;
+                            indexCard[3]=index+3;
+                            indexCard[4]=3;
+                        }
                     }
                 }
             }

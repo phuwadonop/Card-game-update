@@ -180,9 +180,9 @@ public class sceneController {
         fethButton();
         
         int value = Integer.parseInt(((Pane)event.getSource()).getId());
-        
+        System.out.println("Skip : "game.getSkip());
         System.out.println("Select : "+game.getSelectCards()+" Limit : "+game.getLimitSelectCards());
-       if(game.getSelectCards()<game.getLimitSelectCards()) {
+       if(game.getSelectCards()<game.getLimitSelectCards()&&playerHand.get(value).getStatus()==true) {
             if(game.getSelectStage()==0)
             {
                 if(playerHand.get(value).checkValue1(CardsOnField)==1)
@@ -363,10 +363,7 @@ public class sceneController {
 
         }
         game.setSelectCards(0);  
-        fethButton();
-       
-        System.out.println(game.getNumPlayerhand());
-        
+        fethButton(); 
         endTurn();
        
     }
@@ -435,6 +432,7 @@ public class sceneController {
     @FXML
     private void playerSkip(ActionEvent event){
         game.plusSkip(1);
+        game.setPlayerCanPlay(false);
         endTurn();
     }
 
@@ -452,6 +450,9 @@ public class sceneController {
         
         indexCom1 = Bot.botCalculate(Com1Hand,CardsOnField, game);
             if(indexCom1[4]==4){
+                for(int loop=0;loop<4;loop++){
+                    CardOnFieldComoneList.get(loop).getChildren().clear();
+                }
                 game.setCom1CanPlay(false);
                 game.plusSkip(1);
             }
@@ -515,6 +516,9 @@ public class sceneController {
 
         indexCom2 = Bot.botCalculate(Com2Hand,CardsOnField, game);
             if(indexCom2[4]==4){
+                for(int loop=0;loop<4;loop++){
+                    CardOnFieldComtwoList.get(loop).getChildren().clear();
+                }
                 game.setCom2CanPlay(false);
                 game.plusSkip(1);
             }
@@ -567,6 +571,7 @@ public class sceneController {
 
         if(game.getSkip()==3){
             for(int loop=0;loop<4;loop++){
+                
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
                 CardOnFieldComoneList.get(loop).getChildren().clear();
                 CardOnFieldComtwoList.get(loop).getChildren().clear();
@@ -578,7 +583,10 @@ public class sceneController {
 
         indexCom3 = Bot.botCalculate(Com3Hand,CardsOnField, game);
             if(indexCom3[4]==4){
-                game.setCom1CanPlay(false);
+                for(int loop=0;loop<4;loop++){
+                    CardOnFieldComthreeList.get(loop).getChildren().clear();
+                }
+                game.setCom3CanPlay(false);
                 game.plusSkip(1);
             }
             else if(indexCom3[4]==0){
@@ -636,11 +644,22 @@ public class sceneController {
             }
 
             if(game.getStartStage()==true){
+                System.out.println("new game");
+                
+                game.setStageGame(0);
+                game.setSelectStage(0);
+
                 game.setCom1CanPlay(true);
                 game.setCom2CanPlay(true);
                 game.setCom3CanPlay(true);
                 game.setPlayerCanPlay(true);
-                game.setStartStage(false);
+               
+
+                for(int loop=0;loop<4;loop++)
+                {
+                    game.setStatusButtontrue(loop);
+                }
+
                 if(!ComparableCard.twoCardsOnHand(playerHand)){
                     BList.get(1).getChildren().clear();
                     BList.get(1).getChildren().add(imageviewButtonOff.get(1));
@@ -656,11 +675,12 @@ public class sceneController {
                     BList.get(3).getChildren().add(imageviewButtonOff.get(3));
                     game.setStatusButtonfalse(3);
                 } 
-                CardsOnField = playerHand.get(0);
+                CardsOnField.setValue(0);
+                game.setStartStage(false);
             }
 
             if(game.getPlayerCanPlay()==false){
-                endTurn();
+               endTurn();
             }
 
     }
