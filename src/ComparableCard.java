@@ -153,7 +153,7 @@ public class ComparableCard extends Card implements CheckCardValue{
     public static Boolean isFourCard(ArrayList<ComparableCard> cardsOnHand,int value){
         int stacx = 0;
         for(int loop=0;loop<13;loop++){
-            if(cardsOnHand.get(loop).getValue()==value){
+            if(cardsOnHand.get(loop).getValue()==value&&cardsOnHand.get(loop).getStatus()==true){
                 
                 stacx++;
                
@@ -170,7 +170,7 @@ public class ComparableCard extends Card implements CheckCardValue{
     public static Boolean isThreeCard(ArrayList<ComparableCard> cardsOnHand,int value){
         int stacx = 0;
         for(int loop=0;loop<13;loop++){
-            if(cardsOnHand.get(loop).getValue()==value){
+            if(cardsOnHand.get(loop).getValue()==value&&cardsOnHand.get(loop).getStatus()==true){
                 
                 stacx++;
                
@@ -187,7 +187,7 @@ public class ComparableCard extends Card implements CheckCardValue{
         int stacx = 0;
         for(int loop=0;loop<13;loop++){
 
-            if(cardsOnHand.get(loop).getValue()==value){
+            if(cardsOnHand.get(loop).getValue()==value&&cardsOnHand.get(loop).getStatus()==true){
                 stacx++;
             }
         }
@@ -197,6 +197,56 @@ public class ComparableCard extends Card implements CheckCardValue{
         }
        
         return false;
+    }
+
+    public static ComparableCard findmax(ComparableCard card1,ComparableCard card2){
+        if(card1.getValue()==card2.getValue())
+        {
+            if(card1.getValueSuit()>card2.getValueSuit())
+            {
+                return card1;
+            }
+            else{
+                return card2;
+            }
+        }
+        else if(card1.getValue()>card2.getValue()){
+            return card1;
+        }
+        else{
+            return card2;
+        }
+    }
+
+    public static int findMaxSuit3(ComparableCard card1,ComparableCard card2,ComparableCard card3){
+        if(card1.getValueSuit()>card2.getValueSuit()&&card1.getValueSuit()>card3.getValueSuit()){
+            return 1;
+        }
+        else if(card2.getValueSuit()>card1.getValueSuit()&&card2.getValueSuit()>card3.getValueSuit()){
+            return 2;
+        }
+        else if(card3.getValueSuit()>card1.getValueSuit()&&card3.getValueSuit()>card2.getValueSuit()){
+            return 3;
+        }
+
+        return 0 ;
+    }
+
+    public static int findMaxSuit4(ComparableCard card1,ComparableCard card2,ComparableCard card3,ComparableCard card4){
+        if(card1.getValueSuit()>card2.getValueSuit()&&card1.getValueSuit()>card3.getValueSuit()&&card1.getValueSuit()>card4.getValueSuit()){
+            return 1;
+        }
+        else if(card2.getValueSuit()>card1.getValueSuit()&&card2.getValueSuit()>card3.getValueSuit()&&card2.getValueSuit()>card4.getValueSuit()){
+            return 2;
+        }
+        else if(card3.getValueSuit()>card1.getValueSuit()&&card3.getValueSuit()>card2.getValueSuit()&&card3.getValueSuit()>card4.getValueSuit()){
+            return 3;
+        }
+        else if(card4.getValueSuit()>card1.getValueSuit()&&card4.getValueSuit()>card2.getValueSuit()&&card4.getValueSuit()>card3.getValueSuit()){
+            return 4;
+        }
+
+        return 0 ;
     }
 
     

@@ -179,6 +179,7 @@
             
          </children>
       </HBox>
+      <Button fx:id="enter" layoutX="959.0" layoutY="36.0" mnemonicParsing="false" onAction="#playerEnterCard" text="Button" />
      
    </children>
 </AnchorPane>
