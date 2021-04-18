@@ -180,7 +180,7 @@ public class sceneController {
         fethButton();
         
         int value = Integer.parseInt(((Pane)event.getSource()).getId());
-        System.out.println("Skip : "game.getSkip());
+        System.out.println("Skip : "+game.getSkip());
         System.out.println("Select : "+game.getSelectCards()+" Limit : "+game.getLimitSelectCards());
        if(game.getSelectCards()<game.getLimitSelectCards()&&playerHand.get(value).getStatus()==true) {
             if(game.getSelectStage()==0)
