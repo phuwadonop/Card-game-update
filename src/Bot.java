@@ -6,6 +6,11 @@ public class Bot {
         int[] indexCard={0,0,0,0,4};
             
             if(game.getStartStage()==true){
+                for(int loop=0;loop<4;loop++)
+                {
+                    game.setStatusButtontrue(loop);
+                }
+    
                 cardOnField.setValue(0);
                 for(int loop=0;loop<13;loop++){
                     if(comHand.get(loop).getStatus()==true){
@@ -14,11 +19,19 @@ public class Bot {
                         break;
                     }
                 }
+
+                if(indexCard[4]==4){
+                    game.setStartStage(true);
+                }
+                else{
+                    game.setStartStage(false);
+                }
+
                 game.setCom1CanPlay(true);
                 game.setCom2CanPlay(true);
                 game.setCom3CanPlay(true);
                 game.setPlayerCanPlay(true);
-                game.setStartStage(false);
+                
                 
             }
             else{

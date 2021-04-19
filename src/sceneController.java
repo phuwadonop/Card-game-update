@@ -76,38 +76,7 @@ public class sceneController {
             paneList.get(loop).getChildren().add(playerHand.get(loop).imageview);
         }
         
-       
-        // CardsOnField = Com1Hand.get(12);
-
-        // game.setCardsOnFieldPlayer(Com1Hand.get(12),0);
-        // CardOnFieldPlayerList.get(0).getChildren().add(game.getCardsOnFieldPlayer(0).getImageview());
-        
-        // game.setCardsOnFieldPlayer(Com1Hand.get(4),1);
-        // game.setCardsOnFieldPlayer(Com1Hand.get(3),2);
-        // game.setCardsOnFieldPlayer(Com1Hand.get(2),3);
-
-        // game.setCardsOnFieldComThree(Com3Hand.get(5),0);
-        // game.setCardsOnFieldComThree(Com3Hand.get(4),1);
-        // game.setCardsOnFieldComThree(Com3Hand.get(3),2);
-        // game.setCardsOnFieldComThree(Com3Hand.get(2),3);
-
-        // game.setCardsOnFieldComTwo(Com2Hand.get(5),0);
-        // game.setCardsOnFieldComTwo(Com2Hand.get(4),1);
-        // game.setCardsOnFieldComTwo(Com2Hand.get(3),2);
-        // game.setCardsOnFieldComTwo(Com2Hand.get(2),3);
-
-        // game.setCardsOnFieldComOne(Com1Hand.get(9),0);
-        // game.setCardsOnFieldComOne(Com1Hand.get(8),1);
-        // game.setCardsOnFieldComOne(Com1Hand.get(7),2);
-        // game.setCardsOnFieldComOne(Com1Hand.get(6),3);
-        
-        // for(int loop=0;loop<4;loop++)
-        // {
-        //     CardOnFieldPlayerList.get(loop).getChildren().add(game.getCardsOnFieldPlayer(loop).getImageview());
-        //     CardOnFieldComthreeList.get(loop).getChildren().add(game.getCardsOnFieldComThree(loop).getImageview());
-        //     CardOnFieldComtwoList.get(loop).getChildren().add(game.getCardsOnFieldComTwo(loop).getImageview());
-        //     CardOnFieldComoneList.get(loop).getChildren().add(game.getCardsOnFieldComOne(loop).getImageview());
-        // }
+        game = new GameSesstion();
 
         imageviewButtonOn = SetpicMainPages.setpicOn();
         imageviewButtonOff = SetpicMainPages.setpicOff();
@@ -125,9 +94,6 @@ public class sceneController {
         game.setSelectCards(0);
         System.out.println(time.getTimecount());  
         firstPlay();  
-        
-
-        // TimeCount.count(3);
     }
 
     private void fethButton(){
@@ -254,9 +220,12 @@ public class sceneController {
     private void clickonCardsTop(MouseEvent event)
     {
         int value = Integer.parseInt(((Pane)event.getSource()).getId());
-        paneTopList.get(value).getChildren().clear();
-        paneList.get(value).getChildren().add(playerHand.get(value).imageview);
-        game.decreaseSelectCards();
+        if(playerHand.get(value).getStatus()==true){
+            paneTopList.get(value).getChildren().clear();
+            paneList.get(value).getChildren().add(playerHand.get(value).imageview);
+            game.decreaseSelectCards();
+        }
+        
        
     }
 
@@ -455,6 +424,7 @@ public class sceneController {
             
             game.setStageGame(0);
             game.setSelectStage(0);
+            game.setLimitSelectCards(1);
 
             game.setCom1CanPlay(true);
             game.setCom2CanPlay(true);
@@ -465,6 +435,7 @@ public class sceneController {
             for(int loop=0;loop<4;loop++)
             {
                 game.setStatusButtontrue(loop);
+                BList.get(loop).getChildren().add(imageviewButtonOn.get(loop));
             }
 
             if(!ComparableCard.twoCardsOnHand(playerHand)){
@@ -489,6 +460,7 @@ public class sceneController {
         if(game.getPlayerCanPlay()==false){
            endTurn();
         }
+        
 
     }
 
