@@ -408,7 +408,7 @@ public class sceneController {
         fethButton();
         checkLimitCards();
         
-        if(game.getSkip()==3){
+        if(game.getSkip()==3&&game.getPlayerCanPlay()==true){
             for(int loop=0;loop<4;loop++){
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
                 CardOnFieldComoneList.get(loop).getChildren().clear();
@@ -467,13 +467,14 @@ public class sceneController {
     @FXML
     private void playerSkip(ActionEvent event){
         game.plusSkip(1);
+        System.out.println("skip : "+game.getSkip());
         game.setPlayerCanPlay(false);
         endTurn();
     }
 
     private void bot1Play(){
         
-        if(game.getSkip()==3){
+        if(game.getSkip()==3&&game.getCom1CanPlay()==true){
             for(int loop=0;loop<4;loop++){
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
                 CardOnFieldComoneList.get(loop).getChildren().clear();
@@ -491,6 +492,7 @@ public class sceneController {
                 }
                 game.setCom1CanPlay(false);
                 game.plusSkip(1);
+                System.out.println("skip : "+game.getSkip());
             }
             else if(indexCom1[4]==0){
                 CardOnFieldComoneList.get(0).getChildren().add(Com1Hand.get(indexCom1[0]).imageview);
@@ -498,6 +500,7 @@ public class sceneController {
                 game.decreaseCom1hand(1);
                 CardsOnField=Com1Hand.get(indexCom1[0]);
                 game.setStageGame(0);
+                System.out.println("COM1 Enter Card");
             }
             else if(indexCom1[4]==1){
                 CardOnFieldComoneList.get(0).getChildren().add(Com1Hand.get(indexCom1[0]).imageview);
@@ -507,6 +510,7 @@ public class sceneController {
                 game.decreaseCom1hand(2);
                 CardsOnField=Com1Hand.get(indexCom1[1]);
                 game.setStageGame(1);
+                System.out.println("COM1 Enter Card");
 
             }
             else if(indexCom1[4]==2){
@@ -519,6 +523,7 @@ public class sceneController {
                 game.decreaseCom1hand(3);
                 CardsOnField=Com1Hand.get(indexCom1[2]);
                 game.setStageGame(2);
+                System.out.println("COM1 Enter Card");
 
             }
             else if(indexCom1[4]==3){
@@ -533,13 +538,14 @@ public class sceneController {
                 game.decreaseCom1hand(4);
                 CardsOnField=Com1Hand.get(indexCom1[3]);
                 game.setStageGame(3);
+                System.out.println("COM1 Enter Card");
             }
 
     }
 
     private void bot2Play(){
        
-        if(game.getSkip()==3){
+        if(game.getSkip()==3&&game.getCom2CanPlay()==true){
             for(int loop=0;loop<4;loop++){
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
                 CardOnFieldComoneList.get(loop).getChildren().clear();
@@ -557,6 +563,7 @@ public class sceneController {
                 }
                 game.setCom2CanPlay(false);
                 game.plusSkip(1);
+                System.out.println("skip : "+game.getSkip());
             }
             else if(indexCom2[4]==0){
                 CardOnFieldComtwoList.get(0).getChildren().add(Com2Hand.get(indexCom2[0]).imageview);
@@ -564,6 +571,7 @@ public class sceneController {
                 game.decreaseCom2hand(1);
                 CardsOnField=Com2Hand.get(indexCom2[0]);
                 game.setStageGame(0);
+                System.out.println("COM2 Enter Card");
             }
             else if(indexCom2[4]==1){
                 CardOnFieldComtwoList.get(0).getChildren().add(Com2Hand.get(indexCom2[0]).imageview);
@@ -573,6 +581,7 @@ public class sceneController {
                 game.decreaseCom2hand(2);
                 CardsOnField=Com2Hand.get(indexCom2[1]);
                 game.setStageGame(1);
+                System.out.println("COM2 Enter Card");
 
             }
             else if(indexCom2[4]==2){
@@ -585,6 +594,7 @@ public class sceneController {
                 game.decreaseCom2hand(3);
                 CardsOnField=Com2Hand.get(indexCom2[2]);
                 game.setStageGame(2);
+                System.out.println("COM2 Enter Card");
 
             }
             else if(indexCom2[4]==3){
@@ -599,13 +609,14 @@ public class sceneController {
                 CardsOnField=Com2Hand.get(indexCom2[3]);
                 game.decreaseCom2hand(4);
                 game.setStageGame(3);
+                System.out.println("COM2 Enter Card");
             }
 
     }
 
     private void bot3Play(){
             
-            if(game.getSkip()==3){
+            if(game.getSkip()==3&&game.getCom3CanPlay()==true){
                 for(int loop=0;loop<4;loop++){
                     
                     CardOnFieldPlayerList.get(loop).getChildren().clear();
@@ -624,6 +635,7 @@ public class sceneController {
                 }
                 game.setCom3CanPlay(false);
                 game.plusSkip(1);
+                System.out.println("skip : "+game.getSkip());
             }
             else if(indexCom3[4]==0){
                 CardOnFieldComthreeList.get(0).getChildren().add(Com3Hand.get(indexCom3[0]).imageview);
@@ -631,6 +643,7 @@ public class sceneController {
                 game.decreaseCom3hand(1);
                 CardsOnField=Com3Hand.get(indexCom3[0]);
                 game.setStageGame(0);
+                System.out.println("COM3 Enter Card");
             }
             else if(indexCom3[4]==1){
                 CardOnFieldComthreeList.get(0).getChildren().add(Com3Hand.get(indexCom3[0]).imageview);
@@ -640,6 +653,7 @@ public class sceneController {
                 game.decreaseCom3hand(2);
                 CardsOnField=Com3Hand.get(indexCom3[1]);
                 game.setStageGame(1);
+                System.out.println("COM3 Enter Card");
 
             }
             else if(indexCom3[4]==2){
@@ -652,6 +666,7 @@ public class sceneController {
                 game.decreaseCom3hand(3);
                 CardsOnField=Com3Hand.get(indexCom3[2]);
                 game.setStageGame(2);
+                System.out.println("COM3 Enter Card");
 
             }
             else if(indexCom3[4]==3){
@@ -666,6 +681,7 @@ public class sceneController {
                 CardsOnField=Com3Hand.get(indexCom3[3]);
                 game.decreaseCom3hand(4);
                 game.setStageGame(3);
+                System.out.println("COM3 Enter Card");
             }
 
 
