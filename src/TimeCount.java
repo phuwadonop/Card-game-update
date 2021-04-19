@@ -1,31 +1,41 @@
 
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
 public class TimeCount {
-    
-    
-    public static void count(int sec){
-         Date time  = new Date();
-         Date newtime  = new Date();
-         if(60-sec<=time.getSeconds())
-         {
-            while(newtime.getSeconds()==time.getSeconds()-60)
-            {
-               newtime = new Date();
-            }
-         }
-         else{
-            while(newtime.getSeconds()<time.getSeconds()+sec)
-            {
-               newtime = new Date();
-            }
+      
+      Timer myTimer;
+      int timecount = 0;   
+      
 
-         }
-         
-    }
+      public TimeCount() {
+         this.myTimer = new Timer();
+         myTimer.schedule(new TimerTask() {
+            
 
+            public void run() {
+            
+               timecount+=1;
+            }
+         }, 0, 1000);
+      }
+
+
+      public int getTimecount() {
+         return timecount;
+      }
+
+
+      public void setTimecount(int timecount) {
+         this.timecount = timecount;
+      }
+
+      
+
+     
+
+      
+    
 
 }

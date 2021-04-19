@@ -48,12 +48,17 @@ public class sceneController {
     @FXML
     private Button skip;
 
+    @FXML
+    private Button next;
+
     ComparableCard CardsOnField;
  
     @FXML
     private Button enter;
 
     private int [] indexCom1,indexCom2,indexCom3;
+
+    private TimeCount time = new TimeCount();
 
 
     @FXML
@@ -118,7 +123,9 @@ public class sceneController {
         fethButton();
         checkLimitCards();
         game.setSelectCards(0);
+        System.out.println(time.getTimecount());  
         firstPlay();  
+        
 
         // TimeCount.count(3);
     }
@@ -180,7 +187,10 @@ public class sceneController {
         fethButton();
         
         int value = Integer.parseInt(((Pane)event.getSource()).getId());
+        System.out.println("Time :"+time.getTimecount());
+        System.out.println("Stage : "+game.getStageGame());
         System.out.println("Skip : "+game.getSkip());
+        System.out.println(CardsOnField);
         System.out.println("Select : "+game.getSelectCards()+" Limit : "+game.getLimitSelectCards());
         System.out.println("Player : "+game.getNumPlayerhand()+"||"+" COM1 : "+game.getNumCom1hand()+"||"+" COM2 : "+game.getNumCom2hand()+"||"+" COM3 : "+game.getNumCom3hand());
        if(game.getSelectCards()<game.getLimitSelectCards()&&playerHand.get(value).getStatus()==true) {
@@ -363,9 +373,10 @@ public class sceneController {
             game.decreasePlayerhand(4);   
 
         }
-        game.setSelectCards(0);  
+        game.setSelectCards(0);
         fethButton(); 
         endTurn();
+        
        
     }
 
@@ -489,6 +500,7 @@ public class sceneController {
     }
 
     private void bot1Play(){
+        
         if(game.getSkip()==3){
             for(int loop=0;loop<4;loop++){
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
@@ -554,7 +566,7 @@ public class sceneController {
     }
 
     private void bot2Play(){
-
+       
         if(game.getSkip()==3){
             for(int loop=0;loop<4;loop++){
                 CardOnFieldPlayerList.get(loop).getChildren().clear();
@@ -620,7 +632,7 @@ public class sceneController {
     }
 
     private void bot3Play(){
-
+            
             if(game.getSkip()==3){
                 for(int loop=0;loop<4;loop++){
                     

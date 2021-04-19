@@ -8,7 +8,7 @@ public class GameSesstion {
     private Boolean Com1CanPlay = true;
     private Boolean Com2CanPlay = true;
     private Boolean Com3CanPlay = true;
-
+    private int lasttime = 0 ;
     private int selectStage ;
     private int limitSelectCards ;
     private int selectCards;
@@ -27,7 +27,8 @@ public class GameSesstion {
     private ComparableCard []CardsOnFieldComOne={new ComparableCard(),new ComparableCard(),new ComparableCard(),new ComparableCard()};
     private ComparableCard []CardsOnFieldComTwo={new ComparableCard(),new ComparableCard(),new ComparableCard(),new ComparableCard()};
     private ComparableCard []CardsOnFieldComThree={new ComparableCard(),new ComparableCard(),new ComparableCard(),new ComparableCard()};
-    
+    private int turn ;
+
     public GameSesstion() {
         this.selectStage = 0;
         this.limitSelectCards = 1;
@@ -38,6 +39,7 @@ public class GameSesstion {
         this.numCom2hand = 13;
         this.numCom3hand = 13;
         this.skip = 0 ;
+        this.turn = 0;
     }
 
     public Boolean getStatusButton(int index) {
@@ -260,6 +262,7 @@ public class GameSesstion {
 
     public void setCom1CanPlay(Boolean com1CanPlay) {
         Com1CanPlay = com1CanPlay;
+        System.out.println("Com1Canplay :"+com1CanPlay);
     }
 
     public Boolean getCom2CanPlay() {
@@ -268,6 +271,7 @@ public class GameSesstion {
 
     public void setCom2CanPlay(Boolean com2CanPlay) {
         Com2CanPlay = com2CanPlay;
+        System.out.println("Com2Canplay :"+com2CanPlay);
     }
 
     public Boolean getCom3CanPlay() {
@@ -276,6 +280,7 @@ public class GameSesstion {
 
     public void setCom3CanPlay(Boolean com3CanPlay) {
         Com3CanPlay = com3CanPlay;
+        System.out.println("Com3Canplay :"+com3CanPlay);
     }
 
     public Boolean getPlayerCanPlay() {
@@ -284,6 +289,26 @@ public class GameSesstion {
 
     public void setPlayerCanPlay(Boolean playerCanPlay) {
         this.playerCanPlay = playerCanPlay;
+    }
+
+    public int getLasttime() {
+        return lasttime;
+    }
+
+    public void setLasttime(int lasttime) {
+        this.lasttime = lasttime;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public void plusTurn(int num) {
+        this.turn += num;
     }
 
     
